@@ -6,10 +6,12 @@ path()
     echo -e "${PATH//:/\\n}"
 }
 
-# notify about the status of last command
-notify() {
-    status=$([ $? -eq 0 ] && echo "Completed" || echo "Failed")
-    last_cmd=$(fc -nl -1 | xargs | sed -e "s/;\s*notify$//")
-    notify-send --urgency=normal "$status: $last_cmd"
+hello()
+{
+    cat <<-EOF
+   (__)
+\\\\\\'',)
+  \\/  \\ ^
+  .\\._/_)  Hello ${BOLD}$USER${CLEAR} (${SSH_CLIENT%% *}). This is ${BOLD}$HOSTNAME${CLEAR}!
+EOF
 }
-
