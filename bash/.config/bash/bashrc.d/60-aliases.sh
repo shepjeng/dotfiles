@@ -64,3 +64,16 @@ fi
 alias week="date +%V"
 alias camera="ffplay /dev/video0"
 
+if type eza &>/dev/null; then
+    alias eza="\eza -F --group-directories-first"
+    alias la="\eza -agHilSF --git --time-style=long-iso --group-directories-first"
+fi
+
+if type lsd &>/dev/null; then
+    alias lsd="\lsd -AFlig --icon never --group-dirs first --date '+%Y-%m-%d %H:%M'"
+fi
+
+if type bat &>/dev/null; then
+    alias cat="\bat -p --theme=Nord"
+fi
+
